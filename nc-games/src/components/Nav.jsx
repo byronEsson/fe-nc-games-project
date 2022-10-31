@@ -26,10 +26,13 @@ const Nav = () => {
     console.log(buttons);
     event.target.classList.add("active");
   };
+    
+    
+    
   return (
     <nav>
       <Link to="/reviews" className="nav-button" onClick={handleClick}>
-        Reviews
+        All Reviews
       </Link>
       <li className="dropdown" id="categories" onClick={{ handleClick }}>
         <button className="nav-button">Categories</button>

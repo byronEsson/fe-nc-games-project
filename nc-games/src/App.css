@@ -45,6 +45,10 @@
 h1 {
   margin: 20px;
 }
+h2 {
+  text-transform: capitalize;
+  font-size: 180%;
+}
 
 ul {
   margin: auto;
@@ -95,7 +99,8 @@ li p.bottom {
 }
 
 nav {
-  overflow: hidden;
+  position: sticky;
+  top: 0;
   width: 100%;
   background-color: purple;
   padding: 10px;
@@ -127,7 +132,7 @@ nav {
 }
 
 .active {
-  background-color: gray;
+  color: gray;
 }
 
 nav li {
