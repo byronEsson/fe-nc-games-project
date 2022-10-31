@@ -6,6 +6,7 @@ import Reviews from "./components/Reviews";
 import { User } from "./contexts/User";
 import NotFound from "./components/NotFound";
 import Login from "./components/Login";
+import SingleReview from "./components/SingleReview";
 
 const defaultUser = {
   username: "mallionaire",
@@ -24,6 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/reviews" element={<Reviews />} />
+            <Route path="/review/:review_id" element={<SingleReview />} />
             <Route path="/reviews/:category" element={<Reviews />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
