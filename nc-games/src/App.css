@@ -54,7 +54,7 @@ ul {
   list-style: none;
 }
 
-li {
+ul li {
   margin: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -95,6 +95,7 @@ li p.bottom {
 }
 
 nav {
+  overflow: hidden;
   width: 100%;
   background-color: purple;
   padding: 10px;
@@ -127,4 +128,53 @@ nav {
 
 .active {
   background-color: gray;
+}
+
+nav li {
+  list-style: none;
+  display: inline;
+}
+nav li p {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dropdown {
+  float: center;
+  overflow: hidden;
+}
+
+nav a {
+  float: center;
+}
+.content {
+  display: none;
+  position: absolute;
+  margin-left: 50%;
+  background-color: #f9f9f9;
+  max-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content {
+  float: center;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content:hover {
+  background-color: purple;
+  color: white;
+}
+
+.dropdown:hover .content,
+.dropdown:focus-within .content {
+  display: block;
 }

@@ -9,3 +9,9 @@ export const fetchReviews = () => {
     return reviews;
   });
 };
+
+export const fetchCategories = () => {
+  return myApi.get("/categories").then(({ data: { categories } }) => {
+    return categories;
+  });
+};
