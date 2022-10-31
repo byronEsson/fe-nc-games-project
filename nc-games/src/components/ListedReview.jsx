@@ -3,7 +3,6 @@ const ListedReview = ({ review }) => {
     8,
     10
   )}-${review.created_at.slice(5, 7)}-${review.created_at.slice(0, 4)}`;
-  console.log(review.created_at);
   const timeString = review.created_at.slice(11, 16);
 
   return (

@@ -21,14 +21,10 @@ const Nav = () => {
     const buttons = [...document.getElementsByClassName("nav-button")];
     buttons.forEach((button) => {
       button.classList.remove("active");
-      console.log(button);
     });
-    console.log(buttons);
     event.target.classList.add("active");
   };
-    
-    
-    
+
   return (
     <nav>
       <Link to="/reviews" className="nav-button" onClick={handleClick}>

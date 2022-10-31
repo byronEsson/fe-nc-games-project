@@ -5,7 +5,6 @@ const myApi = axios.create({
 });
 
 export const fetchReviews = (query) => {
-  console.log(query);
   return myApi
     .get(`/reviews${query}`)
     .then(({ data: { reviews } }) => {
