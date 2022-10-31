@@ -73,11 +73,19 @@ li h3 {
   width: 50%;
   font-size: 80%;
 }
+.label.bottom {
+  width: 32%;
+  flex-grow: 1;
+}
 
 li p {
   margin-top: 0;
   font-size: 100%;
   width: 50%;
+}
+li p.bottom {
+  width: 32%;
+  flex-grow: 1;
 }
 
 .review-img {
@@ -115,4 +123,8 @@ nav {
   .review-img {
     max-height: max-content;
   }
+}
+
+.active {
+  background-color: gray;
 }
