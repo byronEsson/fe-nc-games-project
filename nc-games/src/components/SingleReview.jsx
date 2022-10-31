@@ -30,7 +30,7 @@ const SingleReview = () => {
   ) : (
     <>
       <main className="single-review">
-        <Link to={`reviews/${review.category}`} id="single-review-link">
+        <Link to={`/reviews/${review.category}`} id="single-review-link">
           {review.category.replaceAll("-", " ")}
         </Link>
         <h2>{review.title}</h2>
