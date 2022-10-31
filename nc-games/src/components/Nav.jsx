@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { fetchCategories } from "../api";
 import { User } from "../contexts/User";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const Nav = () => {
   const user = useContext(User);
@@ -31,7 +33,11 @@ const Nav = () => {
         All Reviews
       </Link>
       <li className="dropdown" id="categories" onClick={{ handleClick }}>
-        <button className="nav-button">Categories</button>
+        <button className="nav-button">
+          Categories <FontAwesomeIcon icon={faCaretDown} />
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
         <ul className="content">
           {isLoading ? (
             <></>
