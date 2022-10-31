@@ -4,8 +4,17 @@ const myApi = axios.create({
   baseURL: "https://byrons-backend-project.herokuapp.com/api",
 });
 
-export const fetchReviews = () => {
-  return myApi.get("/reviews").then(({ data: { reviews } }) => {
-    return reviews;
+export const fetchReviews = (query) => {
+  return myApi
+    .get(`/reviews${query}`)
+    .then(({ data: { reviews } }) => {
+      return reviews;
+    })
+    .catch((err) => console.log(err));
+};
+
+export const fetchCategories = () => {
+  return myApi.get(`/categories`).then(({ data: { categories } }) => {
+    return categories;
   });
 };
