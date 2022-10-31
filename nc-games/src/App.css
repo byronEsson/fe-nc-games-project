@@ -45,6 +45,10 @@
 h1 {
   margin: 20px;
 }
+h2 {
+  text-transform: capitalize;
+  font-size: 180%;
+}
 
 ul {
   margin: auto;
@@ -54,7 +58,7 @@ ul {
   list-style: none;
 }
 
-li {
+ul li {
   margin: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -95,10 +99,13 @@ li p.bottom {
 }
 
 nav {
+  position: sticky;
+  top: -0.1%;
   width: 100%;
   background-color: purple;
   padding: 10px;
 }
+
 .nav-button {
   height: 100%;
   border: none;
@@ -112,10 +119,6 @@ nav {
   border-right: #282c34 solid 2px;
 }
 
-.active {
-  background-color: gray;
-}
-
 .single-review {
   text-align: left;
   width: 97%;
@@ -124,6 +127,11 @@ nav {
 }
 .single-review img {
   margin: auto;
+  display: block;
+}
+.single-review #review-body {
+  margin-top: 20px;
+  display: block;
 }
 .single-review #review-body::first-letter {
   font-size: 2.5rem;
@@ -159,6 +167,59 @@ nav {
   }
 }
 
+.active {
+  color: gray;
+}
+
+nav li {
+  list-style: none;
+  display: inline;
+}
+nav li p {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dropdown {
+  float: center;
+  overflow: hidden;
+}
+
+nav a {
+  float: center;
+}
+.content {
+  display: none;
+  position: absolute;
+  margin-left: 50%;
+  background-color: #f9f9f9;
+  max-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content {
+  float: center;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content:hover {
+  background-color: purple;
+  color: white;
+}
+
+.dropdown:hover .content,
+.dropdown:focus-within .content {
+  display: block;
+}
+
 @media only screen and (min-width: 768px) {
   ul {
     width: 70%;
@@ -178,4 +239,57 @@ nav {
     width: 50%;
     font-size: 1.2em;
   }
+}
+
+.active {
+  color: gray;
+}
+
+nav li {
+  list-style: none;
+  display: inline;
+}
+nav li p {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dropdown {
+  float: center;
+  overflow: hidden;
+}
+
+nav a {
+  float: center;
+}
+.content {
+  display: none;
+  position: absolute;
+  margin-left: 50%;
+  background-color: #f9f9f9;
+  max-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content {
+  float: center;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content:hover {
+  background-color: purple;
+  color: white;
+}
+
+.dropdown:hover .content,
+.dropdown:focus-within .content {
+  display: block;
 }

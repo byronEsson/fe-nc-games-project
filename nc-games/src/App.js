@@ -26,6 +26,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/review/:review_id" element={<SingleReview />} />
+            <Route path="/reviews/:category" element={<Reviews />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </div>
