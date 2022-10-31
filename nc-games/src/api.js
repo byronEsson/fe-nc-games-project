@@ -9,3 +9,9 @@ export const fetchReviews = () => {
     return reviews;
   });
 };
+
+export const fetchReviewById = (id) => {
+  return myApi.get(`/reviews/${id}`).then(({ data: { review } }) => {
+    return review;
+  });
+};
