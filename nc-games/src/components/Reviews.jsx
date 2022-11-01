@@ -57,14 +57,20 @@ const Reviews = () => {
         <>
           <h2>All Reviews</h2>
           <form onSubmit={handleSubmit}>
-            <select value={sorter} onChange={handleSorterChange}>
+            <label htmlFor="sort-value">Sort by</label>
+            <select
+              value={sorter}
+              id="sort-value"
+              onChange={handleSorterChange}
+            >
               <option value="created_at">Date</option>
               <option value="title">Title</option>
 
               <option value="designer">Designer</option>
               <option value="votes">Likes</option>
             </select>
-            <select value={order} onChange={handleOrderChange}>
+            <label htmlFor="order"></label>
+            <select value={order} id="order" onChange={handleOrderChange}>
               <option value="desc">Descending</option>
               <option value="asc">Ascending</option>
             </select>
