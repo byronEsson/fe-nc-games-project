@@ -9,10 +9,10 @@ import Login from "./components/Login";
 import SingleReview from "./components/SingleReview";
 
 const defaultUser = {
-  username: "mallionaire",
-  name: "haz",
+  username: "tickle122",
+  name: "Tom Tickle",
   avatar_url:
-    "https://www.healthytherapies.com/wp-content/uploads/2016/06/Lime3.jpg",
+    "https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953",
 };
 
 function App() {
