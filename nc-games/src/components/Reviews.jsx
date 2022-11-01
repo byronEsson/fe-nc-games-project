@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { fetchReviews } from "../api";
 import ListedReview from "./ListedReview";
+import NotFound from "./NotFound";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState();
@@ -14,11 +15,11 @@ const Reviews = () => {
   const [sorter, setSorter] = useState("created_at");
   const [order, setOrder] = useState("desc");
   const [searchQueries, setSearchQueries] = useSearchParams();
+  const [reqError, setReqError] = useState();
 
   const { category } = useParams();
 
   useEffect(() => {
-    // setIsLoading(true);
     let query = "";
     const sort_by = searchQueries.get("sort_by");
     const order_by = searchQueries.get("order");
@@ -31,10 +32,15 @@ const Reviews = () => {
       query += `category=${category}`;
     }
 
-    fetchReviews(query).then((res) => {
-      setReviews(res);
-      setIsLoading(false);
-    });
+    fetchReviews(query)
+      .then((res) => {
+        setReviews(res);
+        setIsLoading(false);
+      })
+      .catch(({ response: { status } }) => {
+        setReqError(status);
+        setIsLoading(false);
+      });
   }, [searchQueries]);
 
   const handleSorterChange = (event) => {
@@ -49,6 +55,10 @@ const Reviews = () => {
     const searchQuery = { sort_by: sorter, order };
     setSearchQueries(searchQuery);
   };
+
+  if (reqError) {
+    return <NotFound type="category" />;
+  }
 
   return (
     <>
