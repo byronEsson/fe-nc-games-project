@@ -30,3 +30,11 @@ export const fetchCommentsByReview = (id) => {
     return comments;
   });
 };
+
+export const postComment = (id, comment) => {
+  return myApi
+    .post(`reviews/${id}/comments`, comment)
+    .then(({ data: { comment } }) => {
+      return comment;
+    });
+};

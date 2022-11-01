@@ -299,6 +299,28 @@ nav a {
   display: block;
 }
 
+form textarea {
+  width: 100%;
+  height: auto;
+  padding: 3px;
+  border: none;
+  min-height: 5em;
+  resize: none;
+}
+#comment-form {
+  border: purple 1px solid;
+  margin-bottom: 5px;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+#comment-button {
+  border: none;
+  background-color: purple;
+  color: white;
+  padding: 5px;
+}
 #comments {
   width: 97%;
   margin: auto;

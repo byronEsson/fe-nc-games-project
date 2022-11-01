@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCommentsByReview } from "../api";
 import Comment from "./Comment";
+import LeaveAComment from "./LeaveAComment";
 
 const Comments = () => {
   const { review_id } = useParams();
@@ -22,6 +23,7 @@ const Comments = () => {
   ) : (
     <section id="comments">
       <h3>Comments</h3>
+      <LeaveAComment />
       {comments.map((comment) => {
         return <Comment key={comment.comment_id} comment={comment} />;
       })}
