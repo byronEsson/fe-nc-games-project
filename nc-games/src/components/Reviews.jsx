@@ -15,11 +15,13 @@ const Reviews = () => {
   const [sorter, setSorter] = useState("created_at");
   const [order, setOrder] = useState("desc");
   const [searchQueries, setSearchQueries] = useSearchParams();
-  const [reqError, setReqError] = useState();
+  const [reqError, setReqError] = useState(null);
 
   const { category } = useParams();
 
   useEffect(() => {
+    setIsLoading(true);
+    setReqError(null);
     let query = "";
     const sort_by = searchQueries.get("sort_by");
     const order_by = searchQueries.get("order");
@@ -41,7 +43,7 @@ const Reviews = () => {
         setReqError(status);
         setIsLoading(false);
       });
-  }, [searchQueries]);
+  }, [searchQueries, category]);
 
   const handleSorterChange = (event) => {
     setSorter(event.target.value);
@@ -56,7 +58,7 @@ const Reviews = () => {
     setSearchQueries(searchQuery);
   };
 
-  if (reqError) {
+  if (reqError !== null) {
     return <NotFound type="category" />;
   }
 
