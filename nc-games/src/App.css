@@ -298,7 +298,6 @@ nav a {
 .votes {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   max-width: fit-content;
   float: right;
   text-align: center;
@@ -322,6 +321,9 @@ nav a {
 button svg {
   pointer-events: none;
 }
-.clicked {
+.plus {
+  color: green;
+}
+.minus {
   color: red;
 }

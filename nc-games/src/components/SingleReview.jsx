@@ -50,8 +50,6 @@ const SingleReview = () => {
           src={review.review_img_url}
         />
         <p id="review-body">{review.review_body}</p>
-
-        <p className="votes">Votes: {review.votes}</p>
       </main>
       <Comments review_id={review_id} />
     </>
