@@ -40,6 +40,7 @@ const LeaveAComment = () => {
           setTimeout(() => {
             setErr(null);
           }, 3400);
+          setIsPosting(false);
         });
     }
   };
