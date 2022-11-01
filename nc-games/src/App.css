@@ -99,6 +99,24 @@ li p.bottom {
   max-height: 67vw;
 }
 
+form select {
+  border: none;
+  font-size: 120%;
+  color: purple;
+  width: max-content;
+  text-align: center;
+  background-color: transparent;
+  padding: 5px;
+  margin: 10px;
+}
+form button {
+  border: 1px solid purple;
+  color: white;
+  background-color: purple;
+  font-size: 120%;
+  padding: 5px;
+  margin: 10px;
+}
 nav {
   position: sticky;
   top: -0.1%;
