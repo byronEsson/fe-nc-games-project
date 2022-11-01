@@ -24,3 +24,9 @@ export const fetchReviewById = (id) => {
     return review;
   });
 };
+
+export const fetchCommentsByReview = (id) => {
+  return myApi.get(`/reviews/${id}/comments`).then(({ data: { comments } }) => {
+    return comments;
+  });
+};
