@@ -3,31 +3,40 @@ import { Link, useParams } from "react-router-dom";
 import { fetchReviewById } from "../api";
 import Comments from "./Comments";
 import Voter from "./Voter";
+import NotFound from "./NotFound";
 
 const SingleReview = () => {
   const { review_id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [review, setReview] = useState();
   const [date, setDate] = useState();
+  const [reqError, setReqError] = useState();
 
   useEffect(() => {
     setIsLoading(true);
-    fetchReviewById(review_id).then((res) => {
-      setReview(res);
-      setIsLoading(false);
-      const dateString = `${review.created_at.slice(
-        8,
-        10
-      )}-${review.created_at.slice(5, 7)}-${review.created_at.slice(0, 4)}`;
+    fetchReviewById(review_id)
+      .then((res) => {
+        setReview(res);
+        setIsLoading(false);
+        const dateString = `${review.created_at.slice(
+          8,
+          10
+        )}-${review.created_at.slice(5, 7)}-${review.created_at.slice(0, 4)}`;
 
-      const timeString = review.created_at.slice(11, 16);
+        const timeString = review.created_at.slice(11, 16);
 
-      setDate(`${timeString} ${dateString}`);
-    });
+        setDate(`${timeString} ${dateString}`);
+      })
+      .catch(({ response: { status } }) => {
+        setReqError(status);
+        setIsLoading(false);
+      });
   }, []);
 
   return isLoading ? (
     <h2>Loading...</h2>
+  ) : reqError === 404 ? (
+    <NotFound type={"Review"} />
   ) : (
     <>
       <main className="single-review">
