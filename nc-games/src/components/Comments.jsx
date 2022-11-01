@@ -23,7 +23,7 @@ const Comments = () => {
     <section id="comments">
       <h3>Comments</h3>
       {comments.map((comment) => {
-        return <Comment comment={comment} />;
+        return <Comment key={comment.comment_id} comment={comment} />;
       })}
     </section>
   );

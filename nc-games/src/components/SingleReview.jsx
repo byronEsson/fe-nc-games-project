@@ -7,21 +7,12 @@ const SingleReview = () => {
   const { review_id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [review, setReview] = useState();
-  const [date, setDate] = useState();
 
   useEffect(() => {
     setIsLoading(true);
     fetchReviewById(review_id).then((res) => {
       setReview(res);
       setIsLoading(false);
-      const dateString = `${review.created_at.slice(
-        8,
-        10
-      )}-${review.created_at.slice(5, 7)}-${review.created_at.slice(0, 4)}`;
-
-      const timeString = review.created_at.slice(11, 16);
-
-      setDate(`${timeString} ${dateString}`);
     });
   }, []);
 
