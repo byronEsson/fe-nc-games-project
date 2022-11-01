@@ -32,10 +32,9 @@ const Nav = () => {
       <Link to="/reviews" className="nav-button" onClick={handleClick}>
         All Reviews
       </Link>
-      <li className="dropdown" id="categories" onClick={{ handleClick }}>
+      <li className="dropdown" id="categories" onClick={handleClick}>
         <button className="nav-button">
           Categories <FontAwesomeIcon icon={faCaretDown} />
-          <i class="fa-solid fa-caret-down"></i>
         </button>
 
         <ul className="content">

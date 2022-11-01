@@ -99,6 +99,24 @@ li p.bottom {
   max-height: 67vw;
 }
 
+form select {
+  border: none;
+  font-size: 120%;
+  color: purple;
+  width: max-content;
+  text-align: center;
+  background-color: transparent;
+  padding: 5px;
+  margin: 10px;
+}
+form button {
+  border: 1px solid purple;
+  color: white;
+  background-color: purple;
+  font-size: 120%;
+  padding: 5px;
+  margin: 10px;
+}
 nav {
   position: sticky;
   top: -0.1%;
@@ -297,6 +315,39 @@ nav a {
 .dropdown:hover .content,
 .dropdown:focus-within .content {
   display: block;
+}
+
+.votes {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  float: right;
+  text-align: center;
+}
+.votes p {
+  display: inline;
+}
+
+#err {
+  position: absolute;
+  margin-left: 50px;
+}
+
+.votes button {
+  padding: 10px;
+  border: none;
+  background-color: none;
+  color: purple;
+  font-size: 100%;
+}
+button svg {
+  pointer-events: none;
+}
+.plus {
+  color: green;
+}
+.minus {
+  color: red;
 }
 
 form textarea {

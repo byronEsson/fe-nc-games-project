@@ -25,6 +25,12 @@ export const fetchReviewById = (id) => {
   });
 };
 
+export const patchVotes = (id, votes) => {
+  return myApi.patch(`/reviews/${id}`, votes).then(({ data: { review } }) => {
+    return review;
+  });
+};
+
 export const fetchCommentsByReview = (id) => {
   return myApi.get(`/reviews/${id}/comments`).then(({ data: { comments } }) => {
     return comments;
