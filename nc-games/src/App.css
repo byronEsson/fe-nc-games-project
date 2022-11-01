@@ -317,6 +317,39 @@ nav a {
   display: block;
 }
 
+.votes {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  float: right;
+  text-align: center;
+}
+.votes p {
+  display: inline;
+}
+
+#err {
+  position: absolute;
+  margin-left: 50px;
+}
+
+.votes button {
+  padding: 10px;
+  border: none;
+  background-color: none;
+  color: purple;
+  font-size: 100%;
+}
+button svg {
+  pointer-events: none;
+}
+.plus {
+  color: green;
+}
+.minus {
+  color: red;
+}
+
 #comments {
   width: 97%;
   margin: auto;

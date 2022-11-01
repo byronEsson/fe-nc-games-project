@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { fetchReviewById } from "../api";
 import Comments from "./Comments";
+import Voter from "./Voter";
 
 const SingleReview = () => {
   const { review_id } = useParams();
@@ -24,6 +25,7 @@ const SingleReview = () => {
         <Link to={`/reviews/${review.category}`} id="single-review-link">
           {review.category.replaceAll("-", " ")}
         </Link>
+        <Voter votes={review.votes} id={review_id} />
         <h2>{review.title}</h2>
         <p className="label">Reviewed by: {review.owner}</p>
         <p className="label">{`${review.created_at.slice(
@@ -39,8 +41,6 @@ const SingleReview = () => {
           src={review.review_img_url}
         />
         <p id="review-body">{review.review_body}</p>
-
-        <p className="votes">Votes: {review.votes}</p>
       </main>
       <Comments review_id={review_id} />
     </>
