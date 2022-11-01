@@ -18,7 +18,7 @@ const Reviews = () => {
   const { category } = useParams();
 
   useEffect(() => {
-    setIsLoading(true);
+    // setIsLoading(true);
     let query = "";
     const sort_by = searchQueries.get("sort_by");
     const order_by = searchQueries.get("order");
@@ -27,6 +27,7 @@ const Reviews = () => {
     }
 
     if (category) {
+      query += sort_by ? "&" : "?";
       query += `category=${category}`;
     }
 
@@ -56,28 +57,24 @@ const Reviews = () => {
       ) : (
         <>
           <h2>All Reviews</h2>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="sort-value">Sort by</label>
-            <select
-              value={sorter}
-              id="sort-value"
-              onChange={handleSorterChange}
-            >
-              <option value="created_at">Date</option>
-              <option value="title">Title</option>
-
-              <option value="designer">Designer</option>
-              <option value="votes">Likes</option>
-            </select>
-            <label htmlFor="order"></label>
-            <select value={order} id="order" onChange={handleOrderChange}>
-              <option value="desc">Descending</option>
-              <option value="asc">Ascending</option>
-            </select>
-            <button type="submit">Apply</button>
-          </form>
         </>
       )}
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="sort-value">Sort by</label>
+        <select value={sorter} id="sort-value" onChange={handleSorterChange}>
+          <option value="created_at">Date</option>
+          <option value="title">Title</option>
+
+          <option value="designer">Designer</option>
+          <option value="votes">Likes</option>
+        </select>
+        <label htmlFor="order"></label>
+        <select value={order} id="order" onChange={handleOrderChange}>
+          <option value="desc">Descending</option>
+          <option value="asc">Ascending</option>
+        </select>
+        <button type="submit">Apply</button>
+      </form>
       {isLoading ? (
         <h3>Loading...</h3>
       ) : (
