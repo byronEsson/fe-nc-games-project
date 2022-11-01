@@ -8,33 +8,29 @@ const Voter = ({ votes, id }) => {
   const [isLiked, setIsLiked] = useState(0);
 
   const handleClasses = (event, err) => {
+    const thisButton = event.target.children[0];
+    const likeButton = event.target.parentElement.children[0].children[0];
+    const disLikeButton = event.target.parentElement.children[3].children[0];
+
     if (!err) {
       if (isLiked === 0) {
-        event.target.children[0].classList.add(event.target.name);
+        thisButton.classList.add(event.target.name);
       }
       if (isLiked === -1) {
-        event.target.parentElement.children[3].children[0].classList.remove(
-          "minus"
-        );
+        disLikeButton.classList.remove("minus");
       }
       if (isLiked === 1) {
-        event.target.parentElement.children[0].children[0].classList.remove(
-          "plus"
-        );
+        likeButton.classList.remove("plus");
       }
     } else {
       if (isLiked === 0) {
-        event.target.children[0].classList.remove(event.target.name);
+        thisButton.classList.remove(event.target.name);
       }
       if (isLiked === -1) {
-        event.target.parentElement.children[3].children[0].classList.add(
-          "minus"
-        );
+        disLikeButton.classList.add("minus");
       }
       if (isLiked === 1) {
-        event.target.parentElement.children[0].children[0].classList.add(
-          "plus"
-        );
+        likeButton.classList.add("plus");
       }
     }
   };
