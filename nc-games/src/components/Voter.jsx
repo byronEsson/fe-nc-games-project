@@ -52,21 +52,17 @@ const Voter = ({ votes, id }) => {
     setIsLiked((current) => current + change);
 
     setError(null);
-    return patchVotes(id, { inc_votes: change })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        if (err) {
-          setIncrement((currInc) => currInc - change);
-          setIsLiked((current) => current - change);
-          setError("Something went wrong, please try again");
-          handleClasses(event, err);
-          setTimeout(() => {
-            setError(null);
-          }, 3000);
-        }
-      });
+    return patchVotes(id, { inc_votes: change }).catch((err) => {
+      if (err) {
+        setIncrement((currInc) => currInc - change);
+        setIsLiked((current) => current - change);
+        setError("Something went wrong, please try again");
+        handleClasses(event, err);
+        setTimeout(() => {
+          setError(null);
+        }, 3000);
+      }
+    });
   };
 
   return (
