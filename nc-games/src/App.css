@@ -294,3 +294,34 @@ nav a {
 .dropdown:focus-within .content {
   display: block;
 }
+
+.votes {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  max-width: fit-content;
+  float: right;
+  text-align: center;
+}
+.votes p {
+  display: inline;
+}
+
+#err {
+  position: absolute;
+  margin-left: 50px;
+}
+
+.votes button {
+  padding: 10px;
+  border: none;
+  background-color: none;
+  color: purple;
+  font-size: 100%;
+}
+button svg {
+  pointer-events: none;
+}
+.clicked {
+  color: red;
+}
