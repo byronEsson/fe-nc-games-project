@@ -27,3 +27,9 @@ export const patchVotes = (id, votes) => {
     return review;
   });
 };
+
+export const fetchCommentsByReview = (id) => {
+  return myApi.get(`/reviews/${id}/comments`).then(({ data: { comments } }) => {
+    return comments;
+  });
+};
