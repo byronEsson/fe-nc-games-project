@@ -31,7 +31,6 @@ const LeaveAComment = () => {
       setIsPosting(true);
       postComment(review_id, { username, comment: commentContent })
         .then((res) => {
-          console.log(res);
           setNewComment((current) => [res, ...current]);
           setIsPosting(false);
         })
