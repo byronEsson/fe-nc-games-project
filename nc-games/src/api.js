@@ -50,3 +50,12 @@ export const deleteComment = (id) => {
     return status;
   });
 };
+
+export const patchCommentVotes = (id, votes) => {
+  return myApi
+    .patch(`/comments/${id}`, votes)
+    .then(({ status }) => {
+      return status;
+    })
+    .catch((err) => console.log(err));
+};

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { patchVotes } from "../api";
+import { patchCommentVotes, patchVotes } from "../api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsDown, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
-const Voter = ({ votes, id }) => {
+const Voter = ({ votes, id, isComment }) => {
   const [increment, setIncrement] = useState(0);
   const [error, setError] = useState(null);
   const [isLiked, setIsLiked] = useState(0);
@@ -35,6 +35,11 @@ const Voter = ({ votes, id }) => {
     }
   };
 
+  const handleType = (id, votes, isComment) => {
+    if (isComment) return patchCommentVotes(id, votes);
+    return patchVotes(id, votes);
+  };
+
   const handleClick = (event) => {
     const change = parseFloat(event.target.value);
     if (isLiked === 1 && change === 1) {
@@ -48,7 +53,7 @@ const Voter = ({ votes, id }) => {
     setIsLiked((current) => current + change);
 
     setError(null);
-    return patchVotes(id, { inc_votes: change }).catch((err) => {
+    return handleType(id, { inc_votes: change }, isComment).catch((err) => {
       if (err) {
         setIncrement((currInc) => currInc - change);
         setIsLiked((current) => current - change);

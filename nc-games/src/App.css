@@ -428,7 +428,7 @@ form textarea {
   color: purple;
 }
 .comment h5,
-p {
+.comment p {
   width: 100%;
   margin-bottom: 5px;
 }
@@ -457,4 +457,20 @@ p {
     right: 2.3%;
     top: 26.5%;
   }
+}
+
+#comments .votes {
+  flex-direction: row;
+  align-content: baseline;
+  margin: 0;
+}
+#comments .votes p {
+  line-height: 100%;
+  padding: 10px;
+}
+
+#comments .votes p,
+#comments .votes button {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }

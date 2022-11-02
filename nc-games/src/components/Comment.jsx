@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { User } from "../contexts/User";
 import { useState } from "react";
+import Voter from "./Voter";
 
 const Comment = ({ comment }) => {
   const user = useContext(User);
@@ -29,6 +30,7 @@ const Comment = ({ comment }) => {
         0,
         4
       )} at ${comment.created_at.slice(11, 16)}`}</p>
+      <Voter id={comment.comment_id} votes={comment.votes} isComment={true} />
       {isAuthor ? (
         <DeleteButton
           id={comment.comment_id}
