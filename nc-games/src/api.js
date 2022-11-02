@@ -46,5 +46,7 @@ export const postComment = (id, comment) => {
 };
 
 export const deleteComment = (id) => {
-  return myApi.delete(`/comments/${id}`).then(({ response: { status } }) => {});
+  return myApi.delete(`/comments/${id}`).then(({ response: { status } }) => {
+    return status;
+  });
 };
