@@ -56,10 +56,9 @@ const LeaveAComment = () => {
         <span>{err}</span>
         <button id="comment-button">Comment</button>
       </form>
+      {isPosting ? <h6>Posting...</h6> : <></>}
       {!hasNewComment ? (
         <></>
-      ) : isPosting ? (
-        <h6>Posting...</h6>
       ) : (
         newComment.map((comment) => {
           return <Comment key={comment.comment_id} comment={comment} />;
