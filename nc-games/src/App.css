@@ -68,8 +68,9 @@ ul li {
 }
 li h3 {
   font-size: 140%;
-  margin: 10px;
+  margin-bottom: 10px;
   width: 100%;
+  text-align: left;
 }
 .label {
   margin-bottom: 0;
@@ -77,6 +78,12 @@ li h3 {
   color: gray;
   width: 50%;
   font-size: 80%;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
 }
 .label.bottom {
   width: 32%;
@@ -87,35 +94,43 @@ li p {
   margin-top: 0;
   font-size: 100%;
   width: 50%;
+  margin-bottom: 10px;
 }
 li p.bottom {
   width: 32%;
   flex-grow: 1;
 }
-
+li .bottom.right {
+  width: 32%;
+  flex-grow: 1;
+}
 .review-img {
   max-width: 100%;
   margin: 10px;
   max-height: 67vw;
 }
 
+#sorter-form {
+  border-bottom: 1px purple solid;
+}
+
 form select {
   border: none;
-  font-size: 120%;
+  font-size: 100%;
   color: purple;
   width: max-content;
   text-align: center;
   background-color: transparent;
   padding: 5px;
-  margin: 10px;
+  margin: 5px;
 }
 form button {
   border: 1px solid purple;
   color: white;
   background-color: purple;
-  font-size: 120%;
+  font-size: 100%;
   padding: 5px;
-  margin: 10px;
+  margin: 5px;
 }
 nav {
   position: sticky;
@@ -123,6 +138,7 @@ nav {
   width: 100%;
   background-color: purple;
   padding: 10px;
+  margin-bottom: 15px;
 }
 
 .nav-button {
@@ -131,17 +147,18 @@ nav {
   background-color: inherit;
   color: white;
   font-size: 120%;
-  border-left: #282c34 solid 2px;
+  border-left: white solid 2px;
   padding: 10px;
 }
 #log-out {
-  border-right: #282c34 solid 2px;
+  border-right: white solid 2px;
 }
 
 .single-review {
   text-align: left;
   width: 97%;
   margin: auto;
+  margin-top: 10px;
 }
 .single-review img {
   margin: auto;
@@ -169,6 +186,7 @@ nav {
   margin-top: 0.5em;
   color: purple;
   font-size: 90%;
+  margin-bottom: 0.5em;
 }
 
 @media only screen and (min-width: 600px) {
@@ -182,6 +200,21 @@ nav {
   }
   ul {
     width: 100%;
+  }
+  .nav-button {
+    padding: 10px 40px;
+  }
+  #sorter-form {
+    border-bottom: 1px purple solid;
+    width: 30%;
+    margin: auto;
+    font-size: 120%;
+  }
+  form select {
+    margin: 10px;
+  }
+  form button {
+    margin: 10px;
   }
 }
 
@@ -212,7 +245,7 @@ nav a {
 .content {
   display: none;
   position: absolute;
-  margin-left: 50%;
+  margin-left: 10%;
   background-color: #f9f9f9;
   max-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -236,6 +269,7 @@ nav a {
 .dropdown:hover .content,
 .dropdown:focus-within .content {
   display: block;
+  margin-left: 40%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -377,7 +411,8 @@ form textarea {
   margin: auto;
 }
 #comments h3 {
-  text-decoration: underline purple;
+  background-color: purple;
+  color: white;
 }
 .comment {
   text-align: left;
@@ -399,13 +434,14 @@ form textarea {
 }
 @media only screen and (min-width: 980px) {
   #comments {
-    width: 23%;
+    width: 20%;
     position: absolute;
     float: right;
-    right: 0;
-    top: 23%;
+    right: 2.3%;
+    top: 26.5%;
   }
   .comment {
     border-left: 1px solid purple;
+    border-right: 1px solid purple;
   }
 }

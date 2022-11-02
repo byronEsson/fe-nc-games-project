@@ -35,7 +35,7 @@ const Reviews = () => {
       setReviews(res);
       setIsLoading(false);
     });
-  }, [searchQueries]);
+  }, [searchQueries, category]);
 
   const handleSorterChange = (event) => {
     setSorter(event.target.value);
@@ -59,7 +59,7 @@ const Reviews = () => {
           <h2>All Reviews</h2>
         </>
       )}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="sorter-form">
         <label htmlFor="sort-value">Sort by</label>
         <select value={sorter} id="sort-value" onChange={handleSorterChange}>
           <option value="created_at">Date</option>

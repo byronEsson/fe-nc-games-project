@@ -12,33 +12,33 @@ const ListedReview = ({ review }) => {
     <Link to={`/review/${review.review_id}`}>
       <li>
         <h3>{review.title}</h3>
-        <label htmlFor="designed-by" className="label">
+        <label htmlFor="designed-by" className="label left">
           Designed By
         </label>
-        <label htmlFor="owner" className="label">
+        <label htmlFor="owner" className="label right">
           Review By
         </label>
-        <p className="designer">{review.designer}</p>
-        <p className="owner">{review.owner}</p>
+        <p className="designer left">{review.designer}</p>
+        <p className="owner right">{review.owner}</p>
         <img
           className="review-img"
           alt={`${review.title}`}
           src={review.review_img_url}
         />
-        <label htmlFor="comments" className="label bottom">
+        <label htmlFor="comments" className="label bottom ">
           Comments
         </label>
-        <label htmlFor="date" className="label bottom">
+        <label htmlFor="date" className="label bottom ">
           Posted At
         </label>
-        <label htmlFor="votes" className="label bottom">
+        <label htmlFor="votes" className="label bottom ">
           Votes
         </label>
-        <p className="bottom">{review.comment_count}</p>{" "}
-        <p className="bottom">
+        <p className="bottom ">{review.comment_count}</p>{" "}
+        <p className="bottom ">
           {timeString} {dateString}
         </p>
-        <p className="bottom">{review.votes}</p>
+        <p className="bottom ">{review.votes}</p>
       </li>
     </Link>
   );

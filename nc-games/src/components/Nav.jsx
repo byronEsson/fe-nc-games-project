@@ -29,9 +29,6 @@ const Nav = () => {
 
   return (
     <nav>
-      <Link to="/reviews" className="nav-button" onClick={handleClick}>
-        All Reviews
-      </Link>
       <li className="dropdown" id="categories" onClick={handleClick}>
         <button className="nav-button">
           Categories <FontAwesomeIcon icon={faCaretDown} />
@@ -55,6 +52,9 @@ const Nav = () => {
           )}
         </ul>
       </li>
+      <Link to="/reviews" className="nav-button" onClick={handleClick}>
+        All Reviews
+      </Link>
       <Link to="/" className="nav-button" id="log-out" onClick={handleClick}>
         Logout
       </Link>
