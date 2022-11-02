@@ -64,29 +64,31 @@ const Reviews = () => {
 
   return (
     <>
-      {category ? (
-        <h2>{category.replaceAll("-", " ")}</h2>
-      ) : (
-        <>
-          <h2>All Reviews</h2>
-        </>
-      )}
-      <form onSubmit={handleSubmit} id="sorter-form">
-        <label htmlFor="sort-value">Sort by</label>
-        <select value={sorter} id="sort-value" onChange={handleSorterChange}>
-          <option value="created_at">Date</option>
-          <option value="title">Title</option>
+      <div className="header">
+        {category ? (
+          <h2 className="reviews-header">{category.replaceAll("-", " ")}</h2>
+        ) : (
+          <>
+            <h2 className="reviews-header">All Reviews</h2>
+          </>
+        )}
+        <form onSubmit={handleSubmit} id="sorter-form">
+          <label htmlFor="sort-value">Sort by</label>
+          <select value={sorter} id="sort-value" onChange={handleSorterChange}>
+            <option value="created_at">Date</option>
+            <option value="title">Title</option>
 
-          <option value="designer">Designer</option>
-          <option value="votes">Likes</option>
-        </select>
-        <label htmlFor="order"></label>
-        <select value={order} id="order" onChange={handleOrderChange}>
-          <option value="desc">Descending</option>
-          <option value="asc">Ascending</option>
-        </select>
-        <button type="submit">Apply</button>
-      </form>
+            <option value="designer">Designer</option>
+            <option value="votes">Likes</option>
+          </select>
+          <label htmlFor="order"></label>
+          <select value={order} id="order" onChange={handleOrderChange}>
+            <option value="desc">Descending</option>
+            <option value="asc">Ascending</option>
+          </select>
+          <button type="submit">Apply</button>
+        </form>
+      </div>
       {isLoading ? (
         <h3>Loading...</h3>
       ) : (

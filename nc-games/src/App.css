@@ -53,6 +53,28 @@ h2 {
   text-transform: capitalize;
   font-size: 180%;
 }
+.reviews-header {
+  display: inline;
+  width: max-content;
+  /* border-right: #550080 2px solid; */
+  padding-right: 20px;
+  margin-top: auto;
+  margin-right: 0;
+  margin-bottom: auto;
+  margin-left: 0;
+  /* font-weight: normal; */
+  text-align: left;
+}
+.header {
+  display: flex;
+  border-bottom: 1px solid #550080;
+  width: 48%;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 13px;
+  justify-content: space-between;
+}
+
 ul {
   margin: auto;
   width: 100%;
@@ -138,23 +160,24 @@ li .bottom.right {
 */
 
 #sorter-form {
-  border-bottom: 1px #550080 solid;
+  /* text-align: left; */
+  align-self: end;
+  height: fit-content;
 }
 form select {
   border: none;
-  font-size: 100%;
   color: #550080;
   width: max-content;
   text-align: center;
   background-color: transparent;
   padding: 5px;
-  margin: 5px;
+  /* margin: 5px; */
 }
 form button {
   border: 1px solid #550080;
   color: white;
   background-color: #550080;
-  font-size: 100%;
+
   padding: 5px;
   margin: 5px;
 }
@@ -182,8 +205,19 @@ form button {
 }
 @media only screen and (min-width: 1415px) {
   #sorter-form {
-    width: 30%;
-    font-size: 120%;
+    display: inline;
+    /* flex-grow: 1; */
+    font-size: 140%;
+    margin-left: 20px;
+    margin-right: 0;
+    width: fit-content;
+  }
+
+  form button {
+    font-size: inherit;
+  }
+  form select {
+    font-size: inherit;
   }
 }
 
