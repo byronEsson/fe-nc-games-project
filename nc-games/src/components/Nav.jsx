@@ -19,17 +19,9 @@ const Nav = () => {
     });
   }, []);
 
-  const handleClick = (event) => {
-    const buttons = [...document.getElementsByClassName("nav-button")];
-    buttons.forEach((button) => {
-      button.classList.remove("active");
-    });
-    event.target.classList.add("active");
-  };
-
   return (
     <nav>
-      <li className="dropdown" id="categories" onClick={handleClick}>
+      <li className="dropdown" id="categories" >
         <button className="nav-button">
           Categories <FontAwesomeIcon icon={faCaretDown} />
         </button>
@@ -52,10 +44,10 @@ const Nav = () => {
           )}
         </ul>
       </li>
-      <Link to="/reviews" className="nav-button" onClick={handleClick}>
+      <Link to="/reviews" className="nav-button" >
         All Reviews
       </Link>
-      <Link to="/" className="nav-button" id="log-out" onClick={handleClick}>
+      <Link to="/" className="nav-button" id="log-out" >
         Logout
       </Link>
     </nav>
