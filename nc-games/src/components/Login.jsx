@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchUser } from "../api";
@@ -11,6 +12,10 @@ const Login = ({ setUser }) => {
   const handleChange = (event) => {
     setFormText(event.target.value);
   };
+
+  useEffect(() => {
+    setUser(null);
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();

@@ -123,6 +123,7 @@ nav {
   width: 100%;
   background-color: purple;
   padding: 10px;
+  height: 75%;
 }
 
 .nav-button {
@@ -205,10 +206,6 @@ a {
   float: center;
   overflow: hidden;
 }
-
-nav a {
-  float: center;
-}
 .content {
   display: none;
   position: absolute;
@@ -266,7 +263,9 @@ nav a {
 .active {
   color: gray;
 }
-
+nav {
+  font-size: 80%;
+}
 nav li {
   list-style: none;
   display: inline;
@@ -287,6 +286,14 @@ a {
 
 nav a {
   float: center;
+}
+#nav-avatar {
+  height: 1em;
+  width: 1em;
+  vertical-align: text-bottom;
+  position: relative;
+  border-radius: 50%;
+  background-color: white;
 }
 .content {
   display: none;

@@ -56,7 +56,18 @@ const Nav = () => {
         </ul>
       </li>
       <Link to="/" className="nav-button" id="log-out" onClick={handleClick}>
-        Logout
+        {user === null ? (
+          "Log in"
+        ) : (
+          <>
+            Logout{" "}
+            <img
+              src={user.avatar_url}
+              alt={user.username + "avatar"}
+              id="nav-avatar"
+            />
+          </>
+        )}
       </Link>
     </nav>
   );
