@@ -42,6 +42,21 @@ export const postComment = (id, comment) => {
     });
 };
 
+export const deleteComment = (id) => {
+  return myApi.delete(`/comments/${id}`).then(({ status }) => {
+    return status;
+  });
+};
+
+export const patchCommentVotes = (id, votes) => {
+  return myApi
+    .patch(`/comments/${id}`, votes)
+    .then(({ status }) => {
+      return status;
+    })
+    .catch((err) => console.log(err));
+};
+
 export const fetchUsers = (username) => {
   return myApi.get(`/users`).then(({ data: { users } }) => {
     return users;
