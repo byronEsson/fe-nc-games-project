@@ -64,7 +64,7 @@ ul li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border-bottom: 1px solid purple;
+  border-bottom: 1px solid #550080;
 }
 li h3 {
   font-size: 140%;
@@ -111,13 +111,13 @@ li .bottom.right {
 }
 
 #sorter-form {
-  border-bottom: 1px purple solid;
+  border-bottom: 1px #550080 solid;
 }
 
 form select {
   border: none;
   font-size: 100%;
-  color: purple;
+  color: #550080;
   width: max-content;
   text-align: center;
   background-color: transparent;
@@ -125,9 +125,9 @@ form select {
   margin: 5px;
 }
 form button {
-  border: 1px solid purple;
+  border: 1px solid #550080;
   color: white;
-  background-color: purple;
+  background-color: #550080;
   font-size: 100%;
   padding: 5px;
   margin: 5px;
@@ -136,7 +136,7 @@ nav {
   position: sticky;
   top: -0.1%;
   width: 100%;
-  background-color: purple;
+  background-color: #550080;
   padding: 10px;
   margin-bottom: 15px;
 }
@@ -172,7 +172,7 @@ nav {
   font-size: 2.5rem;
   line-height: 2.2rem;
   font-weight: bold;
-  color: purple;
+  color: #550080;
   float: left;
 }
 
@@ -184,7 +184,7 @@ nav {
 
 .votes {
   margin-top: 0.5em;
-  color: purple;
+  color: #550080;
   font-size: 90%;
   margin-bottom: 0.5em;
 }
@@ -205,7 +205,7 @@ nav {
     padding: 10px 40px;
   }
   #sorter-form {
-    border-bottom: 1px purple solid;
+    border-bottom: 1px #550080 solid;
     width: 30%;
     margin: auto;
     font-size: 120%;
@@ -262,7 +262,7 @@ nav a {
 }
 
 .dropdown-content:hover {
-  background-color: purple;
+  background-color: #550080;
   color: white;
 }
 
@@ -342,7 +342,7 @@ nav a {
 }
 
 .dropdown-content:hover {
-  background-color: purple;
+  background-color: #550080;
   color: white;
 }
 
@@ -371,7 +371,7 @@ nav a {
   padding: 10px;
   border: none;
   background-color: none;
-  color: purple;
+  color: #550080;
   font-size: 100%;
 }
 button svg {
@@ -393,7 +393,7 @@ form textarea {
   resize: none;
 }
 #comment-form {
-  border: purple 1px solid;
+  border: #550080 1px solid;
   margin-bottom: 5px;
   text-align: left;
   display: flex;
@@ -402,7 +402,7 @@ form textarea {
 }
 #comment-button {
   border: none;
-  background-color: purple;
+  background-color: #550080;
   color: white;
   padding: 5px;
 }
@@ -411,21 +411,21 @@ form textarea {
   margin: auto;
 }
 #comments h3 {
-  background-color: purple;
+  background-color: #550080;
   color: white;
 }
 .comment {
   text-align: left;
-  border-bottom: 1px purple solid;
-  border-left: 1px solid purple;
-  border-right: 1px solid purple;
+  border-bottom: 1px #550080 solid;
+  border-left: 1px solid #550080;
+  border-right: 1px solid #550080;
   margin-bottom: 5px;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
 }
 .comment h5 {
-  color: purple;
+  color: #550080;
 }
 .comment h5,
 .comment p {
@@ -434,7 +434,7 @@ form textarea {
 }
 .delete-button {
   border: none;
-  background-color: purple;
+  background-color: #550080;
   color: white;
   padding: 5px;
   margin-right: 0;
