@@ -10,7 +10,8 @@ const Comment = ({ comment }) => {
   const [isAuthor, setIsAuthor] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
   useEffect(() => {
-    if (comment.author === user.username) {
+    if (user === null) setIsAuthor(false);
+    else if (comment.author === user.username) {
       setIsAuthor(true);
     }
   }, []);
@@ -31,7 +32,9 @@ const Comment = ({ comment }) => {
         4
       )} at ${comment.created_at.slice(11, 16)}`}</p>
       <Voter id={comment.comment_id} votes={comment.votes} isComment={true} />
-      {isAuthor ? (
+      {user === null ? (
+        <></>
+      ) : isAuthor ? (
         <DeleteButton
           id={comment.comment_id}
           owner={comment.author}
