@@ -204,17 +204,31 @@ nav {
   .nav-button {
     padding: 10px 40px;
   }
-  #sorter-form {
-    border-bottom: 1px #550080 solid;
-    width: 30%;
-    margin: auto;
-    font-size: 120%;
-  }
+
   form select {
     margin: 10px;
   }
   form button {
     margin: 10px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #sorter-form {
+    width: 65%;
+    margin: auto;
+    font-size: 100%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  #sorter-form {
+    width: 40%;
+    font-size: 100%;
+  }
+}
+@media only screen and (min-width: 1415px) {
+  #sorter-form {
+    width: 30%;
+    font-size: 120%;
   }
 }
 
@@ -265,7 +279,13 @@ nav a {
 .dropdown:hover .content,
 .dropdown:focus-within .content {
   display: block;
-  margin-left: 40%;
+  margin-left: 10%;
+}
+@media only screen and (min-width: 400px) {
+  .dropdown:hover .content,
+  .dropdown:focus-within .content {
+    margin-left: 20%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -291,8 +311,23 @@ nav a {
     width: 50%;
     font-size: 1.2em;
   }
+  .dropdown:hover .content,
+  .dropdown:focus-within .content {
+    margin-left: 30%;
+  }
 }
-
+@media only screen and (min-width: 1350px) {
+  .dropdown:hover .content,
+  .dropdown:focus-within .content {
+    margin-left: 33%;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  .dropdown:hover .content,
+  .dropdown:focus-within .content {
+    margin-left: 37%;
+  }
+}
 .active {
   color: gray;
 }
