@@ -310,7 +310,6 @@ nav {
 #log-out {
   border-right: white solid 2px;
 }
-
 nav li {
   list-style: none;
   display: inline;
@@ -519,4 +518,14 @@ Comment Voter
   .users p {
     font-size: 120%;
   }
+}
+
+#nav-avatar {
+  height: 1em;
+  width: 1em;
+  vertical-align: text-bottom;
+  position: relative;
+  border-radius: 50%;
+  background-color: white;
+  margin-left: 10px;
 }
