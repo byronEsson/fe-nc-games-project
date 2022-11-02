@@ -16,7 +16,7 @@ const DeleteButton = ({ id, setIsDeleted }) => {
   };
 
   return (
-    <button type="button" onClick={handleClick}>
+    <button type="button" className="delete-button" onClick={handleClick}>
       {isDeleting ? "Deleting" : "Delete"}
     </button>
   );
