@@ -397,8 +397,6 @@ form textarea {
 }
 
 @media only screen and (min-width: 768px) {
-}
-@media only screen and (min-width: 768px) {
   #comments {
     width: 85%;
     margin: auto;
@@ -414,5 +412,45 @@ form textarea {
   }
   .comment {
     border-left: 1px solid purple;
+  }
+}
+
+.users {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.users img {
+  width: 70px;
+  height: 70px;
+}
+
+.users p {
+  font-size: 90%;
+  width: 100%;
+  flex-shrink: none;
+}
+.users-list-item {
+  width: 35vw;
+  flex-grow: 1;
+}
+@media only screen and (min-width: 980px) {
+  .users img {
+    width: 200px;
+    height: 200px;
+  }
+  .users p {
+    font-size: 120%;
+  }
+}
+@media only screen and (min-width: 768px) and (min-height: 500px) {
+  .users img {
+    width: 200px;
+    height: 200px;
+  }
+  .users p {
+    font-size: 120%;
   }
 }

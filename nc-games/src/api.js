@@ -42,8 +42,8 @@ export const postComment = (id, comment) => {
     });
 };
 
-export const fetchUser = (username) => {
-  return myApi.get(`/users/${username}`).then(({ data: { user } }) => {
-    return user;
+export const fetchUsers = (username) => {
+  return myApi.get(`/users`).then(({ data: { users } }) => {
+    return users;
   });
 };
