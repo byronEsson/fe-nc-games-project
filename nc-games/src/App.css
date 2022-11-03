@@ -51,11 +51,34 @@ h1 {
 
 h2 {
   text-transform: capitalize;
-  font-size: 180%;
+  font-size: 120%;
+  padding-right: 10px;
+  flex-shrink: 25%;
 }
+.header {
+  display: flex;
+  border-bottom: 1px solid #550080;
+  width: 97%;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 13px;
+  justify-content: space-between;
+}
+.reviews-header {
+  display: inline;
+  width: max-content;
+  border-right: #550080 2px solid;
+  margin-top: auto;
+  margin-right: 0;
+  margin-bottom: auto;
+  margin-left: 0;
+  text-align: left;
+  padding-right: 5px;
+}
+
 ul {
   margin: auto;
-  width: 100%;
+  width: 97%;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -63,29 +86,105 @@ ul {
 
 @media only screen and (min-width: 600px) {
   ul {
-    width: 100%;
+    width: 80%;
+  }
+  .header {
+    width: 80%;
+  }
+  .reviews-header {
+    padding-right: 15px;
   }
 }
 @media only screen and (min-width: 768px) {
   ul {
-    width: 70%;
-  }
-  .review-img {
-    max-height: max-content;
+    width: 80%;
   }
 }
 @media only screen and (min-width: 980px) {
   ul {
-    width: 50%;
+    width: 80%;
   }
 }
+@media only screen and (min-width: 1350px) {
+  .header,
+  ul {
+    width: 50%;
+  }
+  .reviews-header {
+    border: none;
+  }
+}
+/* 
+  Sorter
+*/
 
+form select {
+  border: none;
+  color: #550080;
+  width: max-content;
+  text-align: center;
+  background-color: transparent;
+  padding: 0px;
+  font-size: 100%;
+}
+form button {
+  border: 1px solid #550080;
+  color: white;
+  background-color: #550080;
+  padding: 3px;
+  padding-bottom: 3px;
+  margin: 4px;
+  margin-right: 0;
+  font-size: 100%;
+}
+@media only screen and (min-width: 600px) {
+  form select {
+    margin: 10px;
+  }
+  form button {
+    margin: 10px;
+    margin-right: 0;
+  }
+  h2 {
+    font-size: 130%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #sorter-form {
+    font-size: 100%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  #sorter-form {
+    font-size: 100%;
+  }
+}
+@media only screen and (min-width: 1415px) {
+  #sorter-form {
+    display: inline;
+    /* flex-grow: 1; */
+    font-size: 140%;
+    margin-left: 20px;
+    width: fit-content;
+  }
+
+  form button {
+    font-size: inherit;
+  }
+  form select {
+    font-size: inherit;
+  }
+  .reviews-header {
+    font-size: 150%;
+  }
+}
 /* 
   Listed Review
 */
 
 ul li {
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -132,59 +231,6 @@ li .bottom.right {
   max-width: 100%;
   margin: 10px;
   max-height: 67vw;
-}
-/* 
-  Sorter
-*/
-
-#sorter-form {
-  border-bottom: 1px #550080 solid;
-}
-form select {
-  border: none;
-  font-size: 100%;
-  color: #550080;
-  width: max-content;
-  text-align: center;
-  background-color: transparent;
-  padding: 5px;
-  margin: 5px;
-}
-form button {
-  border: 1px solid #550080;
-  color: white;
-  background-color: #550080;
-  font-size: 100%;
-  padding: 5px;
-  margin: 5px;
-}
-
-@media only screen and (min-width: 600px) {
-  form select {
-    margin: 10px;
-  }
-  form button {
-    margin: 10px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  #sorter-form {
-    width: 65%;
-    margin: auto;
-    font-size: 100%;
-  }
-}
-@media only screen and (min-width: 980px) {
-  #sorter-form {
-    width: 40%;
-    font-size: 100%;
-  }
-}
-@media only screen and (min-width: 1415px) {
-  #sorter-form {
-    width: 30%;
-    font-size: 120%;
-  }
 }
 
 /* 
@@ -240,6 +286,12 @@ form button {
   }
 }
 @media only screen and (min-width: 980px) {
+  .single-review {
+    width: 75%;
+    font-size: 1.2em;
+  }
+}
+@media only screen and (min-width: 1350px) {
   .single-review {
     width: 50%;
     font-size: 1.2em;
@@ -297,34 +349,54 @@ nav {
   padding: 10px;
   margin-bottom: 15px;
   z-index: 1;
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
 }
 .nav-button {
   height: 100%;
   border: none;
   background-color: inherit;
   color: white;
-  font-size: 120%;
+  font-size: 100%;
   border-left: white solid 2px;
   padding: 10px;
+  flex-grow: 1;
 }
 #log-out {
   border-right: white solid 2px;
 }
 nav li {
-  list-style: none;
   display: inline;
-}
-nav li p {
-  display: inline;
+  flex-grow: 1;
 }
 a {
   text-decoration: none;
   color: inherit;
 }
-
+nav > * {
+  flex-basis: 0;
+}
+nav li {
+  padding: 10px;
+  border-left: white solid 2px;
+}
+nav li .nav-button {
+  padding: 0;
+  border: none;
+}
 @media only screen and (min-width: 600px) {
-  .nav-button {
-    padding: 10px 40px;
+  nav {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+@media only screen and (min-width: 1350px) {
+  nav {
+    padding-left: 25%;
+    padding-right: 25%;
   }
 }
 
@@ -409,6 +481,7 @@ form textarea {
   background-color: #550080;
   color: white;
   padding: 5px;
+  margin-right: 10px;
 }
 #comments {
   width: 97%;
@@ -429,12 +502,17 @@ form textarea {
   flex-wrap: wrap;
 }
 .comment h5 {
+  padding-top: 2px;
   color: #550080;
+  width: 50%;
+  flex-grow: 1;
 }
-.comment h5,
 .comment p {
   width: 100%;
   margin-bottom: 5px;
+}
+.comment .label {
+  width: 50%;
 }
 .delete-button {
   border: none;
@@ -452,6 +530,12 @@ form textarea {
   }
 }
 @media only screen and (min-width: 980px) {
+  #comments {
+    width: 75%;
+    margin: auto;
+  }
+}
+@media only screen and (min-width: 1350px) {
   #comments {
     width: 20%;
     position: absolute;
@@ -472,11 +556,11 @@ Comment Voter
 }
 #comments .votes p {
   line-height: 100%;
-  padding: 10px;
+  padding: 5px 10px 4px;
 }
-#comments .votes p,
+
 #comments .votes button {
-  padding-top: 4px;
+  padding-top: 0px;
   padding-bottom: 4px;
 }
 
@@ -536,12 +620,15 @@ Login
   Paginator
 */
 .paginator {
-  width: 50%;
+  width: 97%;
   justify-content: right;
   position: relative;
+  font-size: 80%;
 }
 .paginator li {
   display: inline;
+  margin-left: 20px;
+  /* margin-bottom: 0; */
 }
 .paginator .label {
   font-size: 100%;
@@ -553,4 +640,16 @@ Login
 .paginator .active {
   background-color: #550080;
   color: white;
+}
+
+@media only screen and (min-width: 600px) {
+  .paginator {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1350px) {
+  .paginator {
+    width: 50%;
+  }
 }
