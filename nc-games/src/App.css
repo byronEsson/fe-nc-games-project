@@ -480,6 +480,9 @@ Comment Voter
   padding-bottom: 4px;
 }
 
+/* 
+Login
+*/
 .users {
   width: 100%;
   display: flex;
@@ -528,4 +531,25 @@ Comment Voter
   border-radius: 50%;
   background-color: white;
   margin-left: 10px;
+/* 
+  Paginator
+*/
+.paginator {
+  width: 50%;
+  justify-content: right;
+  position: relative;
+}
+.paginator li {
+  display: inline;
+}
+.paginator .label {
+  font-size: 100%;
+  width: fit-content;
+  border: none;
+  height: fit-content;
+}
+
+.paginator .active {
+  background-color: #550080;
+  color: white;
 }

@@ -1,12 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import {
-  useParams,
-  useSearchParams,
-  createSearchParams,
-} from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { fetchReviews } from "../api";
 import ListedReview from "./ListedReview";
+import Paginator from "./Paginator";
 import NotFound from "./NotFound";
 
 const Reviews = () => {
@@ -14,29 +11,37 @@ const Reviews = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [sorter, setSorter] = useState("created_at");
   const [order, setOrder] = useState("desc");
+  const [options, setOptions] = useState();
   const [searchQueries, setSearchQueries] = useSearchParams();
   const [reqError, setReqError] = useState(null);
 
+  const [count, setCount] = useState();
   const { category } = useParams();
 
   useEffect(() => {
-    setIsLoading(true);
+    setOptions({});
+    setSorter("created_at");
+    setOrder("desc");
+  }, [category]);
+
+  useEffect(() => {
     setReqError(null);
-    let query = "";
-    const sort_by = searchQueries.get("sort_by");
-    const order_by = searchQueries.get("order");
-    if (sort_by && order_by) {
-      query = `?sort_by=${sort_by}&order=${order_by}`;
+    setIsLoading(true);
+    let query = "?";
+    const queriesObj = Object.fromEntries([...searchQueries]);
+
+    for (const queryParam in queriesObj) {
+      query += `${queryParam}=${queriesObj[queryParam]}&`;
     }
 
     if (category) {
-      query += sort_by ? "&" : "?";
-      query += `category=${category}`;
+      query += `category=${category}&`;
     }
 
     fetchReviews(query)
-      .then((res) => {
-        setReviews(res);
+      .then(({ reviews, total_count }) => {
+        setReviews(reviews);
+        setCount(total_count);
         setIsLoading(false);
       })
       .catch(({ response: { status } }) => {
@@ -54,8 +59,16 @@ const Reviews = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const searchQuery = { sort_by: sorter, order };
-    setSearchQueries(searchQuery);
+
+    const searchOptions = { sort_by: sorter, order: order };
+    setOptions(() => {
+      const newOptions = { ...searchOptions };
+      return newOptions;
+    });
+    setSearchQueries(() => {
+      const newSearchQueries = { ...searchOptions };
+      return newSearchQueries;
+    });
   };
 
   if (reqError !== null) {
@@ -76,7 +89,6 @@ const Reviews = () => {
         <select value={sorter} id="sort-value" onChange={handleSorterChange}>
           <option value="created_at">Date</option>
           <option value="title">Title</option>
-
           <option value="designer">Designer</option>
           <option value="votes">Likes</option>
         </select>
@@ -90,11 +102,19 @@ const Reviews = () => {
       {isLoading ? (
         <h3>Loading...</h3>
       ) : (
-        <ul>
-          {reviews.map((review) => {
-            return <ListedReview key={review.review_id} review={review} />;
-          })}
-        </ul>
+        <>
+          <Paginator
+            setSearchQueries={setSearchQueries}
+            count={count}
+            setOptions={setOptions}
+            options={options}
+          />
+          <ul>
+            {reviews.map((review) => {
+              return <ListedReview key={review.review_id} review={review} />;
+            })}
+          </ul>
+        </>
       )}
     </>
   );
