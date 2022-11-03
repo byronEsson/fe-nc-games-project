@@ -7,8 +7,8 @@ const myApi = axios.create({
 export const fetchReviews = (query) => {
   return myApi
     .get(`/reviews${query}`)
-    .then(({ data: { reviews } }) => {
-      return reviews;
+    .then(({ data }) => {
+      return data;
     })
     .catch((err) => console.log(err));
 };
