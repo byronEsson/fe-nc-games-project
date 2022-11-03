@@ -33,13 +33,12 @@ const Reviews = () => {
     if (category) {
       query += `category=${category}&`;
     }
-
     fetchReviews(query).then(({ reviews, total_count }) => {
       setReviews(reviews);
       setCount(total_count);
       setIsLoading(false);
     });
-  }, [searchQueries, category]);
+  }, [category, searchQueries]);
 
   const handleSorterChange = (event) => {
     setSorter(event.target.value);
@@ -50,11 +49,16 @@ const Reviews = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const searchQuery = { sort_by: sorter, order: order };
-    setOptions((current) => {
-      return { ...current, ...searchQuery };
+
+    const searchOptions = { sort_by: sorter, order: order };
+    setOptions(() => {
+      const newOptions = { ...searchOptions };
+      return newOptions;
     });
-    setSearchQueries({ ...options, ...searchQuery });
+    setSearchQueries(() => {
+      const newSearchQueries = { ...searchOptions };
+      return newSearchQueries;
+    });
   };
 
   return (
@@ -90,7 +94,6 @@ const Reviews = () => {
             count={count}
             setOptions={setOptions}
             options={options}
-            category={category}
           />
           <ul>
             {reviews.map((review) => {

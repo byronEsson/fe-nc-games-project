@@ -479,3 +479,26 @@ form textarea {
   padding-top: 4px;
   padding-bottom: 4px;
 }
+
+/* 
+  Paginator
+*/
+.paginator {
+  width: 50%;
+  justify-content: right;
+  position: relative;
+}
+.paginator li {
+  display: inline;
+}
+.paginator .label {
+  font-size: 100%;
+  width: fit-content;
+  border: none;
+  height: fit-content;
+}
+
+.paginator .active {
+  background-color: #550080;
+  color: white;
+}

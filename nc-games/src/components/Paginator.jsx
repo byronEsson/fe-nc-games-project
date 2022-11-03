@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Paginator = ({ setSearchQueries, count, setOptions, options }) => {
   const [pagesSelector, setPagesSelector] = useState([]);
+  const { category } = useParams();
 
   useEffect(() => {
     setPagesSelector([]);
@@ -13,7 +15,7 @@ const Paginator = ({ setSearchQueries, count, setOptions, options }) => {
       }
       return newSelector;
     });
-  }, [count]);
+  }, [count, category]);
 
   const handleClick = (event) => {
     setOptions((current) => {
@@ -23,10 +25,24 @@ const Paginator = ({ setSearchQueries, count, setOptions, options }) => {
   };
 
   return (
-    <ul>
+    <ul className="paginator">
+      <li id="pages-showing" className="label">
+        Showing page {options.p ? options.p : 1} of {pagesSelector.length}
+      </li>{" "}
       {pagesSelector.map((selector) => {
         return (
-          <li key={selector} onClick={handleClick} value={selector}>
+          <li
+            key={selector}
+            onClick={handleClick}
+            value={selector}
+            className={
+              options.p === selector
+                ? "active"
+                : options.p === undefined && selector === 1
+                ? "active"
+                : ""
+            }
+          >
             {selector}
           </li>
         );
