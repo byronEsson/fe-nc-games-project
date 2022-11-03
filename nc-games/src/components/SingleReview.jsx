@@ -3,22 +3,31 @@ import { Link, useParams } from "react-router-dom";
 import { fetchReviewById } from "../api";
 import Comments from "./Comments";
 import Voter from "./Voter";
+import NotFound from "./NotFound";
 
 const SingleReview = () => {
   const { review_id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [review, setReview] = useState();
+  const [reqError, setReqError] = useState();
 
   useEffect(() => {
     setIsLoading(true);
-    fetchReviewById(review_id).then((res) => {
-      setReview(res);
-      setIsLoading(false);
-    });
+    fetchReviewById(review_id)
+      .then((res) => {
+        setReview(res);
+        setIsLoading(false);
+      })
+      .catch(({ response: { status } }) => {
+        setReqError(status);
+        setIsLoading(false);
+      });
   }, []);
 
   return isLoading ? (
     <h2>Loading...</h2>
+  ) : reqError === 404 ? (
+    <NotFound type={"Review"} />
   ) : (
     <>
       <main className="single-review">

@@ -4,6 +4,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { fetchReviews } from "../api";
 import ListedReview from "./ListedReview";
 import Paginator from "./Paginator";
+import NotFound from "./NotFound";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState();
@@ -12,6 +13,7 @@ const Reviews = () => {
   const [order, setOrder] = useState("desc");
   const [options, setOptions] = useState();
   const [searchQueries, setSearchQueries] = useSearchParams();
+  const [reqError, setReqError] = useState(null);
 
   const [count, setCount] = useState();
   const { category } = useParams();
@@ -23,6 +25,8 @@ const Reviews = () => {
   }, [category]);
 
   useEffect(() => {
+    setReqError(null);
+    setIsLoading(true);
     let query = "?";
     const queriesObj = Object.fromEntries([...searchQueries]);
 
@@ -33,12 +37,18 @@ const Reviews = () => {
     if (category) {
       query += `category=${category}&`;
     }
-    fetchReviews(query).then(({ reviews, total_count }) => {
-      setReviews(reviews);
-      setCount(total_count);
-      setIsLoading(false);
-    });
-  }, [category, searchQueries]);
+
+    fetchReviews(query)
+      .then(({ reviews, total_count }) => {
+        setReviews(reviews);
+        setCount(total_count);
+        setIsLoading(false);
+      })
+      .catch(({ response: { status } }) => {
+        setReqError(status);
+        setIsLoading(false);
+      });
+  }, [searchQueries, category]);
 
   const handleSorterChange = (event) => {
     setSorter(event.target.value);
@@ -60,6 +70,10 @@ const Reviews = () => {
       return newSearchQueries;
     });
   };
+
+  if (reqError !== null) {
+    return <NotFound type="category" />;
+  }
 
   return (
     <>

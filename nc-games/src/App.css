@@ -462,7 +462,7 @@ form textarea {
 }
 
 /* 
-  Comment Voter
+Comment Voter
 */
 
 #comments .votes {
@@ -480,6 +480,58 @@ form textarea {
   padding-bottom: 4px;
 }
 
+/* 
+Login
+*/
+.users {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.users img {
+  width: 70px;
+  height: 70px;
+}
+
+.users p {
+  font-size: 90%;
+  width: 100%;
+  flex-shrink: none;
+}
+.users-list-item {
+  width: 35vw;
+  flex-grow: 1;
+}
+@media only screen and (min-width: 980px) {
+  .users img {
+    width: 200px;
+    height: 200px;
+  }
+  .users p {
+    font-size: 120%;
+  }
+}
+@media only screen and (min-width: 768px) and (min-height: 500px) {
+  .users img {
+    width: 200px;
+    height: 200px;
+  }
+  .users p {
+    font-size: 120%;
+  }
+}
+
+#nav-avatar {
+  height: 1em;
+  width: 1em;
+  vertical-align: text-bottom;
+  position: relative;
+  border-radius: 50%;
+  background-color: white;
+  margin-left: 10px;
+}
 /* 
   Paginator
 */

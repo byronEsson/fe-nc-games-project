@@ -21,7 +21,7 @@ const Nav = () => {
 
   return (
     <nav>
-      <li className="dropdown" id="categories" >
+      <li className="dropdown" id="categories">
         <button className="nav-button">
           Categories <FontAwesomeIcon icon={faCaretDown} />
         </button>
@@ -44,11 +44,22 @@ const Nav = () => {
           )}
         </ul>
       </li>
-      <Link to="/reviews" className="nav-button" >
+      <Link to="/reviews" className="nav-button">
         All Reviews
       </Link>
-      <Link to="/" className="nav-button" id="log-out" >
-        Logout
+      <Link to="/" className="nav-button" id="log-out">
+        {user === null ? (
+          "Log in"
+        ) : (
+          <>
+            Logout
+            <img
+              src={user.avatar_url}
+              alt={user.username + "avatar"}
+              id="nav-avatar"
+            />
+          </>
+        )}
       </Link>
     </nav>
   );
