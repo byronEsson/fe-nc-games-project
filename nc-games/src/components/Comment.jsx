@@ -21,9 +21,9 @@ const Comment = ({ comment }) => {
     </article>
   ) : (
     <article className="comment">
-      <h5>{comment.author}</h5>
+      <h5>{comment.author}</h5>{" "}
+      <Voter id={comment.comment_id} votes={comment.votes} isComment={true} />
       <p>{comment.body}</p>
-
       <p className="label">{`${comment.created_at.slice(
         8,
         10
@@ -31,7 +31,6 @@ const Comment = ({ comment }) => {
         0,
         4
       )} at ${comment.created_at.slice(11, 16)}`}</p>
-      <Voter id={comment.comment_id} votes={comment.votes} isComment={true} />
       {user === null ? (
         <></>
       ) : isAuthor ? (
