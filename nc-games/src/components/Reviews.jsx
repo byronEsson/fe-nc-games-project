@@ -117,6 +117,12 @@ const Reviews = () => {
               return <ListedReview key={review.review_id} review={review} />;
             })}
           </ul>
+          <Paginator
+            setSearchQueries={setSearchQueries}
+            count={count}
+            setOptions={setOptions}
+            options={options}
+          />
         </>
       )}
     </>
