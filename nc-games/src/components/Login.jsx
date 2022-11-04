@@ -23,13 +23,13 @@ const Login = ({ setUser }) => {
         <ul className="users">
           {users.map((user) => {
             return (
-              <Link to="/reviews">
+              <Link to="/reviews" key={user.username}>
                 <li
-                  key={user.username}
                   onClick={() => {
                     setUser(user);
                   }}
-               className="users-list-item" >
+                  className="users-list-item"
+                >
                   <img
                     className="avatar"
                     src={user.avatar_url}
