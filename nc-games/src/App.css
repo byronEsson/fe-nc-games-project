@@ -432,33 +432,10 @@ nav li .nav-button {
 .dropdown:hover .content,
 .dropdown:focus-within .content {
   display: block;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
-@media only screen and (min-width: 400px) {
-  .dropdown:hover .content,
-  .dropdown:focus-within .content {
-    margin-left: 20%;
-  }
-}
-@media only screen and (min-width: 980px) {
-  .dropdown:hover .content,
-  .dropdown:focus-within .content {
-    margin-left: 30%;
-  }
-}
-@media only screen and (min-width: 1350px) {
-  .dropdown:hover .content,
-  .dropdown:focus-within .content {
-    margin-left: 33%;
-  }
-}
-@media only screen and (min-width: 1700px) {
-  .dropdown:hover .content,
-  .dropdown:focus-within .content {
-    margin-left: 37%;
-  }
-}
+
 
 form textarea {
   width: 100%;
