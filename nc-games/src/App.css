@@ -435,8 +435,6 @@ nav li .nav-button {
   margin-left: 5%;
 }
 
-
-
 form textarea {
   width: 100%;
   height: auto;
@@ -600,12 +598,12 @@ Login
   width: 97%;
   justify-content: right;
   position: relative;
-  font-size: 80%;
+  font-size: 85%;
 }
-.paginator li {
+.paginator a {
   display: inline;
   margin-left: 20px;
-  /* margin-bottom: 0; */
+  margin-top: inherit;
 }
 .paginator .label {
   font-size: 100%;
@@ -615,8 +613,10 @@ Login
 }
 
 .paginator .active {
-  background-color: #550080;
-  color: white;
+  color: #550080;
+  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: #550080;
 }
 
 @media only screen and (min-width: 600px) {

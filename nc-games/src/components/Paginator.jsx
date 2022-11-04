@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Paginator = ({ setSearchQueries, count, setOptions, options }) => {
   const [pagesSelector, setPagesSelector] = useState([]);
@@ -18,10 +18,11 @@ const Paginator = ({ setSearchQueries, count, setOptions, options }) => {
   }, [count, category]);
 
   const handleClick = (event) => {
+    event.preventDefault();
     setOptions((current) => {
-      return { ...current, p: event.target.value };
+      return { ...current, p: event.target.name };
     });
-    setSearchQueries({ ...options, p: event.target.value });
+    setSearchQueries({ ...options, p: event.target.name });
   };
 
   return (
@@ -31,20 +32,21 @@ const Paginator = ({ setSearchQueries, count, setOptions, options }) => {
       </li>{" "}
       {pagesSelector.map((selector) => {
         return (
-          <li
+          <Link
+            name={selector}
             key={selector}
             onClick={handleClick}
-            value={selector}
             className={
-              options.p === selector
+              parseFloat(options.p) === selector
                 ? "active"
                 : options.p === undefined && selector === 1
                 ? "active"
                 : ""
             }
           >
+            {" "}
             {selector}
-          </li>
+          </Link>
         );
       })}
     </ul>
