@@ -62,3 +62,9 @@ export const fetchUsers = (username) => {
     return users;
   });
 };
+
+export const postReview = (review) => {
+  return myApi.post("/reviews", review).then(({ data: { review } }) => {
+    return review;
+  });
+};

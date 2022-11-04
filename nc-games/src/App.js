@@ -7,28 +7,39 @@ import { User } from "./contexts/User";
 import NotFound from "./components/NotFound";
 import Login from "./components/Login";
 import SingleReview from "./components/SingleReview";
-import { useState } from "react";
-
-const defaultUser = {
-  username: "tickle122",
-  name: "Tom Tickle",
-  avatar_url:
-    "https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953",
-};
+import { useState, useEffect } from "react";
+import PostReview from "./components/PostReview";
+import { fetchCategories } from "./api";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [categories, setCategories] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetchCategories().then((res) => {
+      setCategories(res);
+      setIsLoading(false);
+    });
+  }, []);
   return (
     <BrowserRouter>
       <User.Provider value={user}>
         <div className="App">
           <Header />
-          <Nav />
+          <Nav categories={categories} isLoading={isLoading} />
           <Routes>
             <Route path="/" element={<Login setUser={setUser} />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/review/:review_id" element={<SingleReview />} />
             <Route path="/reviews/:category" element={<Reviews />} />
+            <Route
+              path="/post/review"
+              element={
+                <PostReview categories={categories} isLoading={isLoading} />
+              }
+            />
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </div>
