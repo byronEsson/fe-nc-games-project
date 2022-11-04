@@ -79,7 +79,12 @@ const Reviews = () => {
     <>
       <div className="header">
         {category ? (
-          <h2 className="reviews-header">{category.replaceAll("-", " ")}</h2>
+          <h2
+            className="reviews-header"
+            id={category.length > 10 ? "long" : ""}
+          >
+            {category.replaceAll("-", " ")}
+          </h2>
         ) : (
           <>
             <h2 className="reviews-header">All Reviews</h2>

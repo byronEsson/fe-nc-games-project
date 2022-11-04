@@ -75,6 +75,9 @@ h2 {
   text-align: left;
   padding-right: 5px;
 }
+#long {
+  font-size: 95%;
+}
 
 ul {
   margin: auto;
@@ -627,6 +630,67 @@ Login
 
 @media only screen and (min-width: 1350px) {
   .paginator {
+    width: 50%;
+  }
+}
+
+/* 
+  Post Review 
+*/
+#post-review-heading {
+  border-bottom: 1px solid #550080;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+#post-review {
+  width: 97%;
+  margin: auto;
+  text-align: left;
+}
+
+#post-review > form > * {
+  display: block;
+  margin: 0;
+  width: 100%;
+  margin-bottom: 10px;
+}
+#post-review input,
+#post-review textarea,
+#post-review select {
+  border: 1px solid #550080;
+  text-align: left;
+  font-size: 18px;
+  padding: 2px;
+}
+
+#post-review .invalid {
+  border: 2px solid red;
+}
+#post-review .invalid::placeholder {
+  color: red;
+}
+#post-review textarea {
+  height: 13em;
+}
+
+#post-review .label {
+  width: auto;
+  text-align: left;
+  margin-bottom: 2px;
+}
+
+@media only screen and (min-width: 600px) {
+  #post-review {
+    width: 80%;
+    font-size: 120%;
+  }
+  #post-review textarea {
+    height: 20em;
+  }
+}
+
+@media only screen and (min-width: 1350px) {
+  #post-review {
     width: 50%;
   }
 }
