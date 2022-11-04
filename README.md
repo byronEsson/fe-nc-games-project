@@ -1,55 +1,31 @@
-# Northcoders Games
+# Northcoders Games Project
+
+https://byrons-nc-games.netlify.app/
+
+### About this project
+
+This is a project I completed as part of the Northcoders bootcamp. Built using React.js, this application makes requests to the API set up during another project (here are the links to that [repo](https://github.com/byronEsson/be-nc-games-project) and the [API](https://byrons-backend-project.herokuapp.com/)
 
 Northcoders Games is a social games content rating, and discussion website.
 
-Northcoders Games has game reviews which are divided into categories. Each review has user curated ratings and can be up or down voted using the API. Users can also add comments about an review. Users can also add comments about a review.
+Northcoders Games has game reviews which are divided into categories. Each review has user curated ratings and can be up or down voted using the API. Users can also add comments about a review.
 
-This sprint should consolidate your understanding of making a [C.R.U.D](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) application from a front end perspective.
+Leave a comment to let me know you've been!
 
-## Kanban
+## To use this repo
 
-### Link to your Trello Board here: https://trello.com/b/HDWmbjGM/fe-nc-games
+Min node version: `v18.7.0`
 
-To keep track of the tasks involved in this project we're going to use a kanban board. Ensure that you work on one _ticket_ at time. You can click on the ticket to find out more information about what is required for the feature. A ticket is not considered complete unless both the happy path and errors response are handled and there is a basic structure to your styling.
-
-**We suggest you work through the tickets from top to bottom.**
-
-## Git Branching and Pull Requests
-
-You will be working on each ticket on a new **branch**.
-
-To create and switch to a new git branch use the command:
+Fork this repo and run
 
 ```
-git checkout -b <new branch name>
+git clone https://github.com/byronEsson/fe-nc-games-project.git
 ```
-
-This will create a branch and move over to that branch. (Omit the `-b` flag if you wish to switch to an already existing branch).
-
-We recommend that you name the branch something that clearly shows the ticket you are working on. eg. `fe-ncnews-display-reviews`
-
-When pushing the branch to git hub ensure that you make reference to the branch you are pushing to on the remote.
+Change directory to the root of the app and install dependencies
 
 ```
-git push origin <branch name>
+cd fe-nc-games/nc-games
+npm i
 ```
 
-From github you can make a pull request and share the link and ticket number on your `nchelp` with a zoom link for you to demo your feature. A tutor will swing by to review your code. Ensure that you keep your trello up to date whilst you await the PR approval.
-
-Once a pull request been accepted be sure to switch back to the main branch and pull down the updated changes.
-
-```
-git checkout main
-
-git pull origin main
-```
-
-You can tidy up your local branches once they have been pull into main by deleting them:
-
-```
-git branch -D <local branch>
-```
-
-## Important
-
-This sprint is among the ones we'll ask you to complete in order to put you forward for jobs. Put a little bit of love into it! :) <3
+You can use `npm start` to view the app in a browser 
