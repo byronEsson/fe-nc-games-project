@@ -8,7 +8,7 @@ This is a project I completed as part of the Northcoders bootcamp. Built using R
 
 Northcoders Games is a social games content rating, and discussion website.
 
-Northcoders Games has game reviews which are divided into categories. Each review has user curated ratings and can be up or down voted using the API. Users can also add comments about a review.
+Northcoders Games has game reviews which are divided into categories. Each review has user curated ratings and can be up or down voted using the API. Users can also add and rate comments about a review.
 
 Leave a comment to let me know you've been!
 
@@ -21,6 +21,7 @@ Fork this repo and run
 ```
 git clone https://github.com/byronEsson/fe-nc-games-project.git
 ```
+
 Change directory to the root of the app and install dependencies
 
 ```
@@ -28,4 +29,4 @@ cd fe-nc-games/nc-games
 npm i
 ```
 
-You can use `npm start` to view the app in a browser 
+You can use `npm start` to view the app in a browser
