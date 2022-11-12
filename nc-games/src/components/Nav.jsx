@@ -40,7 +40,7 @@ const Nav = ({ categories, isLoading }) => {
         All Reviews
       </Link> */}
       <Link to="/post/review" className="nav-button">
-        Post
+        Post A Review
       </Link>
       <Link to="/" className="nav-button" id="log-out">
         {user === null ? (

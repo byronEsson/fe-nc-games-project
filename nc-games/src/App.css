@@ -545,6 +545,10 @@ Comment Voter
 /* 
 Login
 */
+#login-section {
+  width: 97%;
+  margin: auto;
+}
 .users {
   width: 100%;
   display: flex;
@@ -566,7 +570,21 @@ Login
   width: 35vw;
   flex-grow: 1;
 }
-@media only screen and (min-width: 980px) {
+/* @media only screen and (min-width: 980px) {
+  .users img {
+    width: 200px;
+    height: 200px;
+  }
+  .users p {
+    font-size: 120%;
+  }
+ 
+} */
+@media only screen and (min-width: 600px) {
+  #login-section {
+    width: 80%;
+    justify-content: space-evenly;
+  }
   .users img {
     width: 200px;
     height: 200px;
@@ -575,13 +593,15 @@ Login
     font-size: 120%;
   }
 }
-@media only screen and (min-width: 768px) and (min-height: 500px) {
-  .users img {
-    width: 200px;
-    height: 200px;
+@media only screen and (min-width: 1350px) {
+  #login-section {
+    width: 50%;
   }
-  .users p {
-    font-size: 120%;
+  .users {
+    justify-content: space-between;
+  }
+  .users-list-item {
+    width: 20vw;
   }
 }
 
