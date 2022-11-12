@@ -4,7 +4,7 @@ https://byrons-nc-games.netlify.app/
 
 ### About this project
 
-This is a project I completed as part of the Northcoders bootcamp. Built using React.js, this application makes requests to the API set up during another project (here are the links to that [repo](https://github.com/byronEsson/be-nc-games-project) and the [API](https://byrons-backend-project.herokuapp.com/)
+This is a project I completed as part of the Northcoders bootcamp. Built using React.js, this application makes requests to the API set up during another project (here are the links to that [repo](https://github.com/byronEsson/be-nc-games-project) and the [API](https://byrons-backend-project.herokuapp.com/))
 
 Northcoders Games is a social games content rating, and discussion website.
 
